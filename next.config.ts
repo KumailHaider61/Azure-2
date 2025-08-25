@@ -1,21 +1,18 @@
-import type {NextConfig} from 'next';
-const nextConfig: NextConfig = {
-  /* config options here */
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Tell Next.js that the source code is in the 'src' folder
+  srcDir: 'src',
+
+  // Enable React strict mode
+  reactStrictMode: true,
+
+  // Optional: Enable SWC compiler for faster builds
+  swcMinify: true,
+
+  // Optional: If you want images from external domains
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    domains: [], // add domains if needed
   },
 };
-export default nextConfig;
+
+module.exports = nextConfig;
